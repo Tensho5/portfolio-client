@@ -9,9 +9,9 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn flat>Home</v-btn>
-        <v-btn flat>About</v-btn>
+        <v-btn flat v-scroll="{target: '#about', callback: onScroll}">About</v-btn>
         <v-btn flat>Blog</v-btn>
-        <v-btn flat>Contact</v-btn>
+        <v-btn flat v-scroll="{target: '#contact', callback: onScroll}">Contact</v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
@@ -28,6 +28,9 @@
     name: "Layout",
     data: () => ({
       drawer: false
-    })
+    }),
+    methods: {
+      onScroll(e) { console.log(e); }
+    }
   }
 </script>
