@@ -15,10 +15,8 @@
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
-      <v-container fluid>
-        <nuxt/>
-      </v-container>
-      <v-btn v-scroll="onScroll" v-show="fab" @click="goTo('home')" color="secondary" fab dark fixed bottom right>
+      <nuxt/>
+      <v-btn v-scroll="onScroll" v-show="fab" @click="goTo('home')" color="secondary" fab fixed bottom right>
         <v-icon>keyboard_arrow_up</v-icon>
       </v-btn>
     </v-content>
