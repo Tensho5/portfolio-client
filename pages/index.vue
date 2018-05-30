@@ -1,6 +1,9 @@
 <template>
   <div>
   <v-container>
+    <section id="home" style="height: 800px;">
+    <h3>Home</h3>
+  </section>
   <section id="about" style="height: 800px;">
     <h3>About</h3>
   </section>
