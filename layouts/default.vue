@@ -8,16 +8,19 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn flat>Home</v-btn>
-        <v-btn flat v-scroll="{target: '#about', callback: onScroll}">About</v-btn>
-        <v-btn flat>Blog</v-btn>
-        <v-btn flat v-scroll="{target: '#contact', callback: onScroll}">Contact</v-btn>
+        <v-btn flat @click="goTo('home')">Home</v-btn>
+        <v-btn flat @click="goTo('about')">About</v-btn>
+        <v-btn flat @click="goTo('blog')">Blog</v-btn>
+        <v-btn flat @click="goTo('contact')">Contact</v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
       <v-container fluid>
         <nuxt/>
       </v-container>
+      <v-btn v-scroll="onScroll" v-show="fab" @click="goTo('home')" color="secondary" fab dark fixed bottom right>
+        <v-icon>keyboard_arrow_up</v-icon>
+      </v-btn>
     </v-content>
     <v-footer app></v-footer>
   </v-app>
@@ -27,10 +30,28 @@
   export default {
     name: "Layout",
     data: () => ({
-      drawer: false
+      drawer: false,
+      fab: false,
+      navOptions: {
+        duration: 1000,
+        easing: 'easeInOutCubic',
+        offset: -80
+      }
     }),
+    mounted() {
+      this.onScroll();
+    },
     methods: {
-      onScroll(e) { console.log(e); }
+      goTo (target) {
+        this.$vuetify.goTo(`#${target}`, this.navOptions)
+      },
+      onScroll () {
+        if (typeof window === 'undefined') return
+        const top = window.pageYOffset ||
+          document.documentElement.offsetTop ||
+          0
+        this.fab = top > 300
+      },
     }
   }
 </script>
