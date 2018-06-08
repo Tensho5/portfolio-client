@@ -3,15 +3,15 @@
     <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp"></v-navigation-drawer>
     <v-toolbar :clipped-left="$vuetify.breakpoint.lgAndUp" color="primary" app>
       <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
-        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-toolbar-side-icon @click.stop="drawer = !drawer" color="secondary"></v-toolbar-side-icon>
         <span class="hidden-sm-and-down">Logo</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn flat @click="goTo('home')">Home</v-btn>
-        <v-btn flat @click="goTo('about')">About</v-btn>
-        <v-btn flat @click="goTo('blog')">Blog</v-btn>
-        <v-btn flat @click="goTo('contact')">Contact</v-btn>
+        <v-btn flat @click="goTo('home')" color="white">Home</v-btn>
+        <v-btn flat @click="goTo('about')" color="white">About</v-btn>
+        <v-btn flat @click="goTo('blog')" color="white">Blog</v-btn>
+        <v-btn flat @click="goTo('contact')" color="white">Contact</v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
