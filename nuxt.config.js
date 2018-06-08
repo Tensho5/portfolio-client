@@ -20,6 +20,12 @@ module.exports = {
   */
   loading: { color: "#ff5252" },
   /*
+  ** i18n middleware
+  */
+  router: {
+    middleware: 'i18n'
+  },
+  /*
   ** Stylus import
   */
   css: ["~/assets/stylus/app.styl"],
