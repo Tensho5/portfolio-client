@@ -26,7 +26,7 @@ module.exports = {
   /*
    ** Plugins
    */
-  plugins: ["~/plugins/vuetify.js"],
+  plugins: ["~/plugins/vuetify.js", "~/plugins/i18n.js"],
   /*
   ** Build configuration
   */
@@ -34,7 +34,7 @@ module.exports = {
     /*
     ** Build vendor
     */
-    vendor: ["~/plugins/vuetify.js"],
+    vendor: ["vuetify", "axios", "vue-i18n"],
     extractCSS: true,
     /*
     ** Run ESLint on save
