@@ -2,15 +2,28 @@
   "links": {
     "home": "Home",
     "about": "About",
-    "english": "English version",
-    "french": "French version"
+    "blog": "Blog",
+    "contact": "Contact",
+    "english": "English",
+    "french": "French"
   },
   "home": {
-    "title": "Welcome",
-    "introduction": "This is an introduction in English."
+    "title": "Hello, my name is Maxime Leclerc",
+    "introduction": "I am a full stack web developer",
+    "welcome": "Welcome to my portfolio",
+    "contact": "Contact me",
+    "about": "About"
   },
   "about": {
     "title": "About",
-    "introduction": "This page is made to give you more informations."
+    "introduction": "Passionate about the web for many years, I started to acquire skills in this area through my formation. Obtaining my professional ATC Webmaster license has given me a solid foundation for designing a website. I was able to deepen this knowledge by my professional experience but also by exercising in my free time a constant watch on the technologies and languages ​​of tomorrow. I practice today for more than 4 years the job of web developer.'"
+  },
+  "skills": {
+    "title": "Skills",
+    "introduction": "From the development of features to the design of a dynamic and intuitive customer interface, my skills allow me to create a tailor-made website."
+  },
+  "contact": {
+    "title": "Contact",
+    "introduction": "Feel free to contact me via this form for all requests, I would be happy to answer you as soon as possible."
   }
 }

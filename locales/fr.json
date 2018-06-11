@@ -2,15 +2,28 @@
   "links": {
     "home": "Accueil",
     "about": "Ã propos",
-    "english": "Version Anglaise",
-    "french": "Version FranÃ§aise"
+    "blog": "Blog",
+    "contact": "Contact",
+    "english": "Anglais",
+    "french": "FranÃ§ais"
   },
   "home": {
-    "title": "Bienvenue",
-    "introduction": "Ceci est un texte d'introduction en FranÃ§ais."
+    "title": "Bonjour, je m'appelle Maxime Leclerc",
+    "introduction": "Je suis développeur web full-stack",
+    "welcome": "Bienvenue sur mon portfolio",
+    "contact": "Me contacter",
+    "about": "Ã propos"
   },
   "about": {
     "title": "Ã propos",
-    "introduction": "Cette page est faite pour vous donner plus d'informations."
+    "introduction": "Passionné par le web depuis de nombreuses années, j'ai commencé à acquerir des compétences dans ce domaine grâce à ma formation. L'obtention de ma licence professionnelle ATC Webmestre m'a permis d'avoir des bases solides pour la conception d'un site web. J'ai ensuite pu approfondir ces connaissances de part mon expérience professionnelle mais aussi en exercant sur mon temps libre une veille constante sur les technologies et langages de demain. J'exerce aujourd'hui depuis plus de 4 ans le métier de développeur web.'"
+  },
+  "skills": {
+    "title": "Compétences",
+    "introduction": "Du développement des fonctionnalités à la conception d'une interface client dynamique et intuitive, mes compétences me permettent de méner à bien la création d'un site web sur mesure."
+  },
+  "contact": {
+    "title": "Contact",
+    "introduction": "N'hésitez pas à me contacter via ce formulaire pour toutes demandes, je me ferais un plaisir de vous répondre dans les plus brefs délais."
   }
 }
