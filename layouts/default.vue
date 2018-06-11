@@ -3,16 +3,22 @@
     <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp"></v-navigation-drawer>
     <v-toolbar :clipped-left="$vuetify.breakpoint.lgAndUp" color="primary" app>
       <v-toolbar-title>
-        <v-toolbar-side-icon @click.stop="drawer = !drawer" color="secondary"></v-toolbar-side-icon>
-        <span class="hidden-sm-and-down">Logo</span>
+        <v-toolbar-side-icon v-if="$vuetify.breakpoint.mdAndDown" @click.stop="drawer = !drawer" color="secondary"></v-toolbar-side-icon>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn flat @click="goTo('home')" color="white">Home</v-btn>
-        <v-btn flat @click="goTo('about')" color="white">About</v-btn>
-        <v-btn flat @click="goTo('blog')" color="white">Blog</v-btn>
-        <v-btn flat @click="goTo('contact')" color="white">Contact</v-btn>
+        <nav class="nav-menu">
+          <ul>
+            <li><a @click="goTo('home')">Home</a></li>
+            <li><a @click="goTo('about')">About</a></li>
+            <li><a @click="goTo('blog')">Blog</a></li>
+            <li><a @click="goTo('contact')">Contact</a></li>
+          </ul>
+        </nav>
       </v-toolbar-items>
+      <v-btn icon>
+        <v-icon color="white">more_vert</v-icon>
+      </v-btn>
     </v-toolbar>
     <v-content style="padding: 0;">
       <nuxt/>
