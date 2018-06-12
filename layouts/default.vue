@@ -34,13 +34,18 @@
         <v-icon>keyboard_arrow_up</v-icon>
       </v-btn>
     </v-content>
-    <v-footer app></v-footer>
+    <footer-app></footer-app>
   </v-app>
 </template>
 
 <script>
+  import Footer from "./footer.vue"
+
   export default {
     name: "Layout",
+    components: {
+      "footer-app": Footer
+    },
     data: () => ({
       drawer: false,
       fab: false,

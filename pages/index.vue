@@ -22,6 +22,14 @@
   <section id="blog" style="height: 800px;">
 
   </section>
+  <section id="twitter" style="background: rgba(35,35,40,0.8)">
+   <v-parallax src="https://matx.coderpixel.com/wp/wp-content/uploads/2016/04/keyboard.jpg?id=2809">
+    <v-layout column align-center justify-center>
+      <h1 class="white--text">Vuetify.js</h1>
+      <h4 class="white--text">Build your application today!</h4>
+    </v-layout>
+  </v-parallax>
+  </section>
   <section id="contact" style="height: 800px;">
     <h3>{{ $t('contact.title') }}</h3>
     <p>{{ $t('contact.introduction') }}</p>
