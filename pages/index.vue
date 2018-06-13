@@ -1,12 +1,14 @@
 <template>
   <div>
   <section id="home" style="height: 100vh; background-color: grey;">
-    <v-container>
-      {{ $t('home.title') }}
-      {{ $t('home.introduction') }}
-      {{ $t('home.welcome') }}
-      <v-btn color="primary">{{ $t('home.about') }}</v-btn>
-      <v-btn color="secondary">{{ $t('home.contact') }}</v-btn>
+    <v-container fill-height>
+      <v-layout row wrap align-center>
+        {{ $t('home.title') }}
+        {{ $t('home.introduction') }}
+        {{ $t('home.welcome') }}
+        <v-btn color="primary">{{ $t('home.about') }}</v-btn>
+        <v-btn color="secondary">{{ $t('home.contact') }}</v-btn>
+      </v-layout>
     </v-container>
   </section>
   <section id="about" class="secondary-bg" style="height: 800px;">
