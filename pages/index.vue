@@ -1,11 +1,13 @@
 <template>
   <div>
-  <section id="home" style="height: 100vh; background-color: grey;">
+  <section id="home" style="height: 100vh; background-color: rgba(51, 51, 51, 0.95);">
     <v-container fill-height>
       <v-layout row wrap align-center>
-        {{ $t('home.title') }}
-        {{ $t('home.introduction') }}
-        {{ $t('home.welcome') }}
+        <div style="transition: none; line-height: 27px; border-width: 0px; text-transform: uppercase; font-weight: 900; font-size: 30px; color: white;">
+          {{ $t('home.title') }}<br/>
+          {{ $t('home.introduction') }}<br/>
+          {{ $t('home.welcome') }}<br/>
+        </div>
         <v-btn color="primary">{{ $t('home.about') }}</v-btn>
         <v-btn color="secondary">{{ $t('home.contact') }}</v-btn>
       </v-layout>
