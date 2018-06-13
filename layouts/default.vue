@@ -1,10 +1,7 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer"></v-navigation-drawer>
-    <v-toolbar color="primary" app>
-      <v-toolbar-title>
-        <v-toolbar-side-icon v-if="$vuetify.breakpoint.mdAndDown" @click.stop="drawer = !drawer" color="secondary"></v-toolbar-side-icon>
-      </v-toolbar-title>
+    <v-toolbar v-bind:class="[ stickyToolbar ? 'sticky-toolbar' : '']" app>
+      <v-toolbar-title></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <nav class="nav-menu">
@@ -50,7 +47,8 @@
     },
     data: () => ({
       drawer: false,
-      fab: false
+      fab: false,
+      stickyToolbar: false
     }),
     mounted() {
       this.onScroll();
@@ -58,9 +56,8 @@
     methods: {
       onScroll () {
         if (typeof window === 'undefined') return
-        const top = window.pageYOffset ||
-          document.documentElement.offsetTop ||
-          0
+        const top = window.pageYOffset || document.documentElement.offsetTop || 0
+        this.stickyToolbar = top > 50
         this.fab = top > 300
       },
     }
