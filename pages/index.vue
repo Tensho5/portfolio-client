@@ -1,18 +1,24 @@
 <template>
   <div>
-  <section id="home" style="height: 100vh; background-color: rgba(51, 51, 51, 0.95);">
-    <v-container fill-height>
-      <v-layout row wrap align-center>
-        <div style="transition: none; line-height: 27px; border-width: 0px; text-transform: uppercase; font-weight: 900; font-size: 30px; color: white;">
-          {{ $t('home.title') }}<br/>
-          {{ $t('home.introduction') }}<br/>
-          {{ $t('home.welcome') }}<br/>
+    <section id="home" v-swiper:mySwiper="swiperOption" style="height: 100vh;">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-color: rgba(51, 51, 51, 0.75);" v-for="(banner, index) in banners" :key="index">
+          <img :src="banner" style="position: absolute; z-index: -1;">
+            <v-container fill-height>
+              <v-layout row wrap align-center>
+                <div style="transition: none; line-height: 27px; border-width: 0px; text-transform: uppercase; font-weight: 900; font-size: 30px; color: white;">
+                  {{ $t('home.title') }}<br/>
+                  {{ $t('home.introduction') }}<br/>
+                  {{ $t('home.welcome') }}<br/>
+                </div>
+                <v-btn color="primary">{{ $t('home.about') }}</v-btn>
+                <v-btn color="secondary">{{ $t('home.contact') }}</v-btn>
+              </v-layout>
+            </v-container>
+          </div>
         </div>
-        <v-btn color="primary">{{ $t('home.about') }}</v-btn>
-        <v-btn color="secondary">{{ $t('home.contact') }}</v-btn>
-      </v-layout>
-    </v-container>
-  </section>
+     <div class="swiper-pagination swiper-pagination-bullets"></div>
+   </section>
   <section id="about" class="secondary-bg" style="height: 800px;">
     <v-container>
       <h3>{{ $t('about.title') }}</h3>
@@ -40,3 +46,28 @@
   </section>
   </div>
 </template>
+
+<script>
+  export default {
+    data: () => ({
+  banners: [
+          '/img/banner.jpg',
+         '/img/banner.jpg',
+            '/img/banner.jpg',
+        ],
+         swiperOption: {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        }
+    })
+  }
+</script>
+
