@@ -32,7 +32,7 @@ module.exports = {
   /*
    ** Plugins
    */
-  plugins: ["~/plugins/vuetify.js", "~/plugins/i18n.js"],
+  plugins: ["~/plugins/vuetify.js", "~/plugins/i18n.js",  "~/plugins/scroll.js"],
   /*
   ** Build configuration
   */

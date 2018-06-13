@@ -8,12 +8,14 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <nav class="nav-menu">
-          <ul>
-            <li><a @click="goTo('home')">{{ $t('links.home') }}</a></li>
-            <li><a @click="goTo('about')">{{ $t('links.about') }}</a></li>
-            <li><a @click="goTo('blog')">{{ $t('links.blog') }}</a></li>
-            <li><a @click="goTo('contact')">{{ $t('links.contact') }}</a></li>
-          </ul>
+          <scrollactive class="nav-menu">
+            <ul>
+              <li><a href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
+              <li><a href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
+              <li><a href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>
+              <li><a href="#contact" class="scrollactive-item">{{ $t('links.contact') }}</a></li>
+            </ul>
+          </scrollactive>
         </nav>
         <v-menu offset-y>
           <v-btn icon>
@@ -48,20 +50,12 @@
     },
     data: () => ({
       drawer: false,
-      fab: false,
-      navOptions: {
-        duration: 1000,
-        easing: 'easeInOutCubic',
-        offset: -80
-      }
+      fab: false
     }),
     mounted() {
       this.onScroll();
     },
     methods: {
-      goTo (target) {
-        this.$vuetify.goTo(`#${target}`, this.navOptions)
-      },
       onScroll () {
         if (typeof window === 'undefined') return
         const top = window.pageYOffset ||
