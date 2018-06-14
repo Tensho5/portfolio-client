@@ -28,12 +28,14 @@ module.exports = {
   /*
   ** Stylus import
   */
-  css: ["~/assets/stylus/app.styl", "swiper/dist/css/swiper.css"],
+  css: [
+    "aos/dist/aos.css",
+    "~/assets/stylus/app.styl"
+  ],
   /*
    ** Plugins
    */
   plugins: [
-    { src: '~/plugins/swiper.js', ssr: false },
     "~/plugins/vuetify.js",
     "~/plugins/i18n.js",
     "~/plugins/scroll.js"

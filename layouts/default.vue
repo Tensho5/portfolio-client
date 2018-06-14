@@ -9,6 +9,7 @@
             <ul>
               <li><a href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
               <li><a href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
+              <li><a href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>
               <li><a href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>
               <li><a href="#contact" class="scrollactive-item">{{ $t('links.contact') }}</a></li>
             </ul>
@@ -33,24 +34,18 @@
         <v-icon>keyboard_arrow_up</v-icon>
       </v-btn>
     </v-content>
-    <footer-app></footer-app>
   </v-app>
 </template>
 
 <script>
-  import Footer from "./footer.vue"
-
   export default {
     name: "Layout",
-    components: {
-      "footer-app": Footer
-    },
     data: () => ({
-      drawer: false,
       fab: false,
       stickyToolbar: false
     }),
     mounted() {
+      import('aos').then(AOS => AOS.init());
       this.onScroll();
     },
     methods: {
