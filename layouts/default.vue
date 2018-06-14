@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <nav class="nav-menu">
-          <scrollactive class="nav-menu">
+          <scrollactive>
             <ul>
               <li><a href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
               <li><a href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
@@ -16,13 +16,30 @@
           </scrollactive>
         </nav>
         <v-menu offset-y>
-          <v-btn icon>
-            <v-icon slot="activator" color="white">more_vert</v-icon>
+          <v-btn flat slot="activator">
+            <img v-if="$i18n.locale === 'fr'" src="https://countryflags.io/fr/flat/32.png" width="32px">
+            <img v-else src="https://countryflags.io/us/flat/32.png" width="32px">
           </v-btn>
           <v-list>
-            <v-list-tile>
-              <v-list-tile-title>{{ $t('links.french') }}</v-list-tile-title>
-              <v-list-tile-title>{{ $t('links.english') }}</v-list-tile-title>
+            <v-list-tile avatar @click="setLanguage('fr')">
+              <v-list-tile-action>
+                <v-avatar :size="32" :tile="true">
+                  <img src="https://countryflags.io/fr/flat/32.png" alt="avatar">
+                </v-avatar>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ $t('links.french') }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile @click="setLanguage('en')">
+              <v-list-tile-action>
+                <v-avatar :size="32" :tile="true">
+                  <img src="https://countryflags.io/us/flat/32.png" alt="avatar">
+                </v-avatar>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ $t('links.english') }}</v-list-tile-title>
+              </v-list-tile-content>
             </v-list-tile>
           </v-list>
         </v-menu>
@@ -45,8 +62,8 @@
       stickyToolbar: false
     }),
     mounted() {
-      import('aos').then(AOS => AOS.init());
-      this.onScroll();
+      import('aos').then(AOS => AOS.init())
+      this.onScroll()
     },
     methods: {
       onScroll () {
@@ -55,6 +72,9 @@
         this.stickyToolbar = top > 50
         this.fab = top > 300
       },
+      setLanguage(lang) {
+        this.$i18n.locale = lang
+      }
     }
   }
 </script>
