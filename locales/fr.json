@@ -1,22 +1,22 @@
 {
   "links": {
     "home": "Accueil",
-    "about": "Ã propos",
+    "about": "À propos",
     "blog": "Blog",
     "portfolio": "Portfolio",
     "contact": "Contact",
     "english": "Anglais",
-    "french": "FranÃ§ais"
+    "french": "Français"
   },
   "home": {
     "title": "Bonjour, je m'appelle Maxime Leclerc",
     "introduction": "Je suis développeur web full-stack",
     "welcome": "Bienvenue sur mon portfolio",
     "contact": "Me contacter",
-    "about": "Ã propos"
+    "about": "À propos"
   },
   "about": {
-    "title": "Ã propos",
+    "title": "À propos",
     "introduction": "Passionné par le web depuis de nombreuses années, j'ai commencé à acquerir des compétences dans ce domaine grâce à ma formation. L'obtention de ma licence professionnelle ATC Webmestre m'a permis d'avoir des bases solides pour la conception d'un site web. J'ai ensuite pu approfondir ces connaissances de part mon expérience professionnelle mais aussi en exercant sur mon temps libre une veille constante sur les technologies et langages de demain. J'exerce aujourd'hui depuis plus de 4 ans le métier de développeur web.'"
   },
   "skills": {
