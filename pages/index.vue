@@ -1,8 +1,8 @@
 <template>
   <div>
     <section id="home">
-      <v-carousel style="height: 100vh; background: rgba(35,35,40,0.8)">
-        <v-carousel-item  style="background: rgba(0, 0, 0, .9)" v-for="(slide, i) in slides" :src="slide.src" :key="i" transition="fade" reverse-transition="fade">
+      <v-carousel :hide-delimiters="false"  style="height: 100vh; background: rgba(35,35,40,0.8)">
+        <v-carousel-item  !style="background: rgba(0, 0, 0, .9)" v-for="(slide, i) in slides" :src="slide.src" :key="i" transition="fade" reverse-transition="fade">
           <slot>
             <v-container fill-height>
               <v-layout row wrap align-center>
@@ -87,7 +87,7 @@
     data: () => ({
       slides: [
         { src: "/img/banner.jpg", text: ["home.title", "home.introduction"] },
-        { src: "/img/banner.jpg", text: [] },
+        { src: "/img/device.jpg", text: [] },
         { src: "/img/banner.jpg", text: ["home.welcome"] },
       ]
     })

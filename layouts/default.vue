@@ -51,6 +51,18 @@
         <v-icon>keyboard_arrow_up</v-icon>
       </v-btn>
     </v-content>
+    <section class="footer-top" style="background-color: #232328;">
+      <div class="section">
+        <div class="section-common-space">
+          <div class="text-xs-center"></div>
+        </div>
+      </div>
+    </section>
+    <section class="footer-bottom pt-3" style="background-color: #1d1d21;">
+      <div class="text-xs-center">
+        <p style="font-weight: 400; font-size: 11px; color: rgba(255,255,255,.3);">MAXIME LECLERC © 2018. ALL RIGHT RESERVED</p>
+      </div>
+    </section>
   </v-app>
 </template>
 
