@@ -29,7 +29,7 @@
         </v-layout>
       </v-container>
     </section>
-    <section style="background: rgba(35,35,40,0.8)">
+    <section id="portfolio" style="background: rgba(35,35,40,0.8)">
       <v-parallax src="http://coderpixel.com/demo/matx/img/banner/what-we-do_bg.jpg">
         <v-layout column align-center justify-center>
           <h1 class="white--text">Vuetify.js</h1>
