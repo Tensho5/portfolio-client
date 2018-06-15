@@ -151,7 +151,7 @@
         { src: "/img/banner.jpg", text: ["home.welcome"] },
       ],
       languages: [
-        { header: 'skills.languages.frameworks' },
+        { header: 'skills.languages.title' },
         { avatar: '/img/php.png', title: 'PHP5/7', progress: 85 },
         { divider: true, inset: true },
         { avatar: '/img/javascript.png', title: 'JS(ES6)/TS', progress: 85 },
