@@ -2,8 +2,9 @@
   "links": {
     "home": "Accueil",
     "about": "À propos",
-    "blog": "Blog",
+    "skills": "Compétences",
     "portfolio": "Portfolio",
+    "blog": "Blog",
     "contact": "Contact",
     "english": "Anglais",
     "french": "Français"
