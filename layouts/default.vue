@@ -56,10 +56,10 @@
         <div class="section-common-space">
           <div class="text-xs-center">
             <ul class="social">
-              <li><a><v-icon>mdi-twitter</v-icon></a></li>
-              <li><a><v-icon>mdi-google-plus</v-icon></a></li>
-              <li><a><v-icon>mdi-linkedin</v-icon></a></li>
-              <li><a><v-icon>mdi-github-circle</v-icon></a></li>
+              <li><a href="https://twitter.com"><v-icon>mdi-twitter</v-icon></a></li>
+              <li><a href="https://google.com"><v-icon>mdi-google-plus</v-icon></a></li>
+              <li><a href="https://linkedin.com"><v-icon>mdi-linkedin</v-icon></a></li>
+              <li><a href="https://github.com"><v-icon>mdi-github-circle</v-icon></a></li>
             </ul>
           </div>
         </div>
@@ -67,7 +67,7 @@
     </section>
     <section class="footer-bottom pt-3" style="background-color: #1d1d21;">
       <div class="text-xs-center">
-        <p style="font-weight: 400; font-size: 11px; color: rgba(255,255,255,.3);">MAXIME LECLERC © 2018. ALL RIGHT RESERVED</p>
+        <p style="font-weight: 400; font-size: 11px; color: rgba(255,255,255,.3);">MAXIME LECLERC © {{ currentYear }}. ALL RIGHT RESERVED</p>
       </div>
     </section>
   </v-app>
@@ -78,11 +78,13 @@
     name: "Layout",
     data: () => ({
       fab: false,
+      currentYear: null,
       stickyToolbar: false
     }),
     mounted() {
       import('aos').then(AOS => AOS.init())
       this.onScroll()
+      this.currentYear = (new Date()).getFullYear()
     },
     methods: {
       onScroll () {
