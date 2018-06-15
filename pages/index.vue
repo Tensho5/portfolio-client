@@ -59,7 +59,7 @@
             <v-card>
               <v-list subheader two-line>
                 <template v-for="(item, index) in languages">
-                  <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
+                  <v-subheader v-if="item.header" :key="item.header">{{ $t(item.header) }}</v-subheader>
                   <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
                   <v-list-tile v-else :key="item.title" avatar>
                     <v-list-tile-avatar tile>
@@ -80,7 +80,7 @@
             <v-card>
               <v-list subheader two-line>
                 <template v-for="(item, index) in frameworks">
-                  <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
+                  <v-subheader v-if="item.header" :key="item.header">{{ $t(item.header) }}</v-subheader>
                   <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
                   <v-list-tile v-else :key="item.title" avatar>
                     <v-list-tile-avatar tile>
@@ -101,7 +101,7 @@
             <v-card>
               <v-list subheader two-line>
                 <template v-for="(item, index) in otherSkills">
-                  <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
+                  <v-subheader v-if="item.header" :key="item.header">{{ $t(item.header) }}</v-subheader>
                   <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
                   <v-list-tile v-else :key="item.title">
                     <v-list-tile-content>
@@ -151,7 +151,7 @@
         { src: "/img/banner.jpg", text: ["home.welcome"] },
       ],
       languages: [
-        { header: 'Languages' },
+        { header: 'skills.languages.frameworks' },
         { avatar: '/img/php.png', title: 'PHP5/7', progress: 85 },
         { divider: true, inset: true },
         { avatar: '/img/javascript.png', title: 'JS(ES6)/TS', progress: 85 },
@@ -163,7 +163,7 @@
         { avatar: '/img/graphql.png', title: 'GraphQL', progress: 35 },
       ],
       frameworks: [
-        { header: 'Web Frameworks' },
+        { header: 'skills.frameworks.title' },
         { avatar: '/img/laravel.png', title: 'Laravel 5', progress: 90 },
         { divider: true, inset: true },
         { avatar: '/img/vue.png', title: 'VueJS', progress: 90 },
@@ -175,10 +175,10 @@
         { avatar: '/img/symfony.png', title: 'Symfony 3', progress: 40 },
       ],
       otherSkills: [
-        { header: 'Others' },
+        { header: 'skills.others.title' },
         { title: 'Continuous integration', subtitle: "Jenkins/GitlabCI/Docker/Ansible" },
         { divider: true, inset: false },
-        { title: 'Preprocessors', subtitle: "Sass/Stylus (Bundled with webpack)" },
+        { title: 'Preprocessors', subtitle: "Sass/Stylus (Webpack)" },
         { divider: true, inset: false },
         { title: 'Versionning', subtitle: "GIT/GIT Flow" },
         { divider: true, inset: false },

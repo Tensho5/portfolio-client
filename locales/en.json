@@ -21,7 +21,16 @@
   },
   "skills": {
     "title": "Skills",
-    "introduction": "From the development of features to the design of a dynamic and intuitive customer interface, my skills allow me to create a tailor-made website."
+    "introduction": "From the development of features to the design of a dynamic and intuitive customer interface, my skills allow me to create a tailor-made website.",
+    "frameworks": {
+      "title": "Web Frameworks"
+    },
+    "languages": {
+      "title": "Languages"
+    },
+    "others": {
+      "title": "Other tools"
+    }
   },
   "contact": {
     "title": "Contact",

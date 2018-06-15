@@ -21,7 +21,16 @@
   },
   "skills": {
     "title": "Compétences",
-    "introduction": "Du développement des fonctionnalités à la conception d'une interface client dynamique et intuitive, mes compétences me permettent de méner à bien la création d'un site web sur mesure."
+    "introduction": "Du développement des fonctionnalités à la conception d'une interface client dynamique et intuitive, mes compétences me permettent de méner à bien la création d'un site web sur mesure.",
+    "frameworks": {
+      "title": "Frameworks web"
+    },
+    "languages": {
+      "title": "Langages"
+    },
+    "others": {
+      "title": "Divers"
+    }
   },
   "contact": {
     "title": "Contact",
