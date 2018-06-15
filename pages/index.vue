@@ -51,11 +51,13 @@
       </v-parallax>
     </section>
     <section id="skills" class="section-bd-top secondary-bg-color">
-      <v-container class="section-common-space">
+      <v-container class="section-common-space text-xs-center">
+        <h3 class="section-title">{{ $t('skills.title') }}</h3>
+        <p>{{ $t('skills.introduction') }}</p>
         <v-layout row>
-          <v-flex class="ma-2" xs4>
+          <v-flex class="ma-2" md4 xs12>
             <v-card>
-              <v-list three-line>
+              <v-list subheader two-line>
                 <template v-for="(item, index) in languages">
                   <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
                   <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
@@ -65,17 +67,19 @@
                     </v-list-tile-avatar>
                     <v-list-tile-content>
                       <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                      <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                      <v-list-tile-sub-title>
+                        <v-progress-linear :height="4" v-model="item.progress"></v-progress-linear>
+                      </v-list-tile-sub-title>
                     </v-list-tile-content>
                   </v-list-tile>
                 </template>
               </v-list>
             </v-card>
           </v-flex>
-          <v-flex class="ma-2" xs4>
+          <v-flex class="ma-2" md4 xs12>
             <v-card>
-              <v-list three-line>
-                <template v-for="(item, index) in items">
+              <v-list subheader two-line>
+                <template v-for="(item, index) in frameworks">
                   <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
                   <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
                   <v-list-tile v-else :key="item.title" avatar>
@@ -84,23 +88,22 @@
                     </v-list-tile-avatar>
                     <v-list-tile-content>
                       <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                      <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                      <v-list-tile-sub-title>
+                        <v-progress-linear :height="4" v-model="item.progress"></v-progress-linear>
+                      </v-list-tile-sub-title>
                     </v-list-tile-content>
                   </v-list-tile>
                 </template>
               </v-list>
             </v-card>
           </v-flex>
-          <v-flex class="ma-2" xs4>
+          <v-flex class="ma-2" md4 xs12>
             <v-card>
-              <v-list three-line>
-                <template v-for="(item, index) in items">
+              <v-list subheader two-line>
+                <template v-for="(item, index) in otherSkills">
                   <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
                   <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
-                  <v-list-tile v-else :key="item.title" avatar>
-                    <v-list-tile-avatar tile>
-                      <img :src="item.avatar">
-                    </v-list-tile-avatar>
+                  <v-list-tile v-else :key="item.title">
                     <v-list-tile-content>
                       <v-list-tile-title v-html="item.title"></v-list-tile-title>
                       <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
@@ -111,15 +114,6 @@
             </v-card>
           </v-flex>
         </v-layout>
-        <h3 class="section-title">{{ $t('skills.title') }}</h3>
-        <p>{{ $t('skills.introduction') }}</p>
-        <img src="/img/vue.png" width="70"/>
-
-        <img src="/img/laravel.png" width="70"/>
-        <img src="/img/angular.png" width="70"/>
-        <img src="/img/sass.svg" width="70"/>
-        <img src="/img/stylus.svg" width="70"/>
-        <img src="/img/webpack.png" width="70"/>
       </v-container>
     </section>
     <section id="blog">
@@ -158,25 +152,39 @@
       ],
       languages: [
         { header: 'Languages' },
-        { avatar: '/img/php.png', title: 'PHP5/7', subtitle: "<span class='text--primary'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
+        { avatar: '/img/php.png', title: 'PHP5/7', progress: 85 },
         { divider: true, inset: true },
-        { avatar: '/img/javascript.png', title: 'JavaScript/TS/ES6', subtitle: "<span class='text--primary'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend." },
+        { avatar: '/img/javascript.png', title: 'JS(ES6)/TS', progress: 85 },
         { divider: true, inset: true },
-        { avatar: '/img/html.png', title: 'HTML5/CSS3', subtitle: "<span class='text--primary'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?" },
+        { avatar: '/img/mysql.png', title: 'SQL', progress: 70 },
         { divider: true, inset: true },
-        { avatar: '/img/angular.png', title: 'MySQL', subtitle: "<span class='text--primary'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?" }
+        { avatar: '/img/html5.png', title: 'HTML5/CSS3', progress: 65 },
+        { divider: true, inset: true },
+        { avatar: '/img/graphql.png', title: 'GraphQL', progress: 35 },
       ],
-      items: [
-        { header: 'Framework front' },
-        { avatar: '/img/vue.png', title: 'Brunch this weekend?', subtitle: "<span class='text--primary'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
+      frameworks: [
+        { header: 'Web Frameworks' },
+        { avatar: '/img/laravel.png', title: 'Laravel 5', progress: 90 },
         { divider: true, inset: true },
-        { avatar: '/img/stylus.svg', title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>', subtitle: "<span class='text--primary'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend." },
+        { avatar: '/img/vue.png', title: 'VueJS', progress: 90 },
         { divider: true, inset: true },
-        { avatar: '/img/sass.svg', title: 'Oui oui', subtitle: "<span class='text--primary'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?" },
+        { avatar: '/img/expressjs.png', title: 'ExpressJS', progress: 75 },
         { divider: true, inset: true },
-        { avatar: '/img/angular.png', title: 'Birthday gift', subtitle: "<span class='text--primary'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?" },
+        { avatar: '/img/angular.png', title: 'Angular 4+', progress: 60 },
         { divider: true, inset: true },
-        { avatar: '/static/doc-images/lists/5.jpg', title: 'Recipe to try', subtitle: "<span class='text--primary'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos." }
+        { avatar: '/img/symfony.png', title: 'Symfony 3', progress: 40 },
+      ],
+      otherSkills: [
+        { header: 'Others' },
+        { title: 'Continuous integration', subtitle: "Jenkins/GitlabCI/Docker/Ansible" },
+        { divider: true, inset: false },
+        { title: 'Preprocessors', subtitle: "Sass/Stylus (Bundled with webpack)" },
+        { divider: true, inset: false },
+        { title: 'Versionning', subtitle: "GIT/GIT Flow" },
+        { divider: true, inset: false },
+        { title: 'Operating System', subtitle: "Linux/Macintosh/Windows" },
+        { divider: true, inset: false },
+        { title: 'Languages', subtitle: "English, notions d'Espagnol" }
       ]
     }),
      mounted () {
