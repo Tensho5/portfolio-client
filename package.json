@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@mdi/font": "^2.4.85",
     "aos": "^2.3.0",
     "axios": "^0.18.0",
     "material-design-icons": "^3.0.1",

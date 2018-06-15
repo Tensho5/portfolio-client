@@ -54,7 +54,14 @@
     <section class="footer-top" style="background-color: #232328;">
       <div class="section">
         <div class="section-common-space">
-          <div class="text-xs-center"></div>
+          <div class="text-xs-center">
+            <ul class="social">
+              <li><a><v-icon>mdi-twitter</v-icon></a></li>
+              <li><a><v-icon>mdi-google-plus</v-icon></a></li>
+              <li><a><v-icon>mdi-linkedin</v-icon></a></li>
+              <li><a><v-icon>mdi-github-circle</v-icon></a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
