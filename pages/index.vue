@@ -127,14 +127,20 @@
       </v-parallax>
     </section>
     <section id="contact">
-      <v-container class="section-common-space">
+      <v-container class="section-common-space text-xs-center">
         <v-layout row wrap>
           <v-flex xs6>
             <h3 class="section-title">{{ $t('contact.title') }}</h3>
             <p>{{ $t('contact.introduction') }}</p>
           </v-flex>
           <v-flex xs6>
-
+            <v-form ref="form" v-model="validateForm" lazy-validation>
+              <v-text-field v-model="contact.name" label="Name" required></v-text-field>
+              <v-text-field v-model="contact.email" :rules="emailRules" label="E-mail" required></v-text-field>
+              <v-text-field v-model="contact.text" label="Content" required></v-text-field>
+              <v-btn :disabled="!validateForm" @click="sendContactForm">Send</v-btn>
+              <v-btn @click="clearContactForm">Clear</v-btn>
+            </v-form>
           </v-flex>
          </v-layout>
       </v-container>
@@ -143,6 +149,8 @@
 </template>
 
 <script>
+  import axios from "axios";
+
   export default {
     data: () => ({
       slides: [
@@ -185,11 +193,27 @@
         { title: 'Operating System', subtitle: "Linux/Macintosh/Windows" },
         { divider: true, inset: false },
         { title: 'Languages', subtitle: "English, notions d'Espagnol" }
-      ]
+      ],
+      validateForm: true,
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+      ],
+      contact: {
+        name: "",
+        email: "",
+        text: ""
+      }
     }),
-     mounted () {
+    mounted () {
 
-     }
+    },
+    methods: {
+      sendContactForm() {},
+      clearContactForm() {
+        this.contact = { name: "", email: "", text: "" };
+      }
+    }
   }
 </script>
 
