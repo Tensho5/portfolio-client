@@ -2,12 +2,12 @@
   <div>
     <section id="home">
       <v-carousel :hide-delimiters="false"  style="height: 100vh; background: rgba(35,35,40,0.8)">
-        <v-carousel-item  !style="background: rgba(0, 0, 0, .9)" v-for="(slide, i) in slides" :src="slide.src" :key="i" transition="fade" reverse-transition="fade">
+        <v-carousel-item style="background: rgba(0, 0, 0, .9)" v-for="(slide, i) in slides" :src="slide.src" :key="i" transition="fade" reverse-transition="fade">
           <slot>
             <v-container fill-height>
               <v-layout row wrap align-center>
                 <div style="transition: none; line-height: 27px; border-width: 0px; text-transform: uppercase; font-weight: 900; font-size: 30px; color: white;">
-                  <li v-for="(text, i) in slide.text" :key="i">{{ $t(text) }}</li>
+                  <span data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" v-for="(text, i) in slide.text" :key="i">{{ $t(text) }}</span>
                 </div>
                 <v-btn color="primary">{{ $t('home.about') }}</v-btn>
                 <v-btn color="secondary">{{ $t('home.contact') }}</v-btn>
@@ -21,10 +21,10 @@
       <v-container class="section-common-space">
         <h3 class="section-title">{{ $t('about.title') }}</h3>
         <v-layout row wrap>
-          <v-flex xs6>
+          <v-flex md6 sm12>
             <p>{{ $t('about.introduction') }}</p>
           </v-flex>
-          <v-flex xs6>
+          <v-flex md6 sm12>
             <v-btn color="primary">{{ $t('home.about') }}</v-btn>
           </v-flex>
         </v-layout>
@@ -34,10 +34,10 @@
       <v-container class="section-common-space">
         <h3 class="section-title">{{ $t('skills.title') }}</h3>
         <v-layout row wrap>
-          <v-flex xs6>
+          <v-flex md6 sm12>
             <p data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">{{ $t('about.introduction') }}</p>
           </v-flex>
-          <v-flex xs6>
+          <v-flex md6 sm12>
           </v-flex>
         </v-layout>
       </v-container>
@@ -54,8 +54,8 @@
       <v-container class="section-common-space text-xs-center">
         <h3 class="section-title">{{ $t('skills.title') }}</h3>
         <p>{{ $t('skills.introduction') }}</p>
-        <v-layout row>
-          <v-flex class="ma-2" md4 xs12>
+        <v-layout row wrap>
+          <v-flex class="ma-2" md4 sm12>
             <v-card>
               <v-list subheader two-line>
                 <template v-for="(item, index) in languages">
@@ -76,7 +76,7 @@
               </v-list>
             </v-card>
           </v-flex>
-          <v-flex class="ma-2" md4 xs12>
+          <v-flex class="ma-2" md4 sm12>
             <v-card>
               <v-list subheader two-line>
                 <template v-for="(item, index) in frameworks">
@@ -97,7 +97,7 @@
               </v-list>
             </v-card>
           </v-flex>
-          <v-flex class="ma-2" md4 xs12>
+          <v-flex class="ma-2" md4 sm12>
             <v-card>
               <v-list subheader two-line>
                 <template v-for="(item, index) in otherSkills">
@@ -129,11 +129,11 @@
     <section id="contact">
       <v-container class="section-common-space text-xs-center">
         <v-layout row wrap>
-          <v-flex xs6>
+          <v-flex md6 sm12>
             <h3 class="section-title">{{ $t('contact.title') }}</h3>
             <p>{{ $t('contact.introduction') }}</p>
           </v-flex>
-          <v-flex xs6>
+          <v-flex md6 sm12>
             <v-form ref="form" v-model="validateForm" lazy-validation>
               <v-text-field v-model="contact.name" label="Name" required></v-text-field>
               <v-text-field v-model="contact.email" :rules="emailRules" label="E-mail" required></v-text-field>

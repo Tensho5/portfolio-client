@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-toolbar v-bind:class="[ stickyToolbar ? 'sticky-toolbar' : '']" app>
-      <v-toolbar-title></v-toolbar-title>
+      <v-toolbar-title>
+        <v-icon style="color: white" @click="drawer = !drawer">menu</v-icon>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <nav class="nav-menu">
@@ -46,6 +48,17 @@
         </v-menu>
       </v-toolbar-items>
     </v-toolbar>
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      app
+    >
+      <v-list dense>
+        <v-list-tile>
+
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
     <v-content class="pa-0">
       <nuxt/>
       <v-btn v-scroll="onScroll" v-show="fab" @click="goTo('home')" color="secondary" fab fixed bottom right>
@@ -80,7 +93,8 @@
     data: () => ({
       fab: false,
       currentYear: null,
-      stickyToolbar: false
+      stickyToolbar: false,
+      drawer: false
     }),
     mounted() {
       import('aos').then(AOS => AOS.init())
