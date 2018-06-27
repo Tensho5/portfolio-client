@@ -127,7 +127,7 @@
       </v-parallax>
     </section>
     <section id="contact">
-      <v-container class="section-common-space text-xs-center">
+      <v-container class="section-common-space">
         <v-layout row wrap>
           <v-flex md6 sm12>
             <h3 class="section-title">{{ $t('contact.title') }}</h3>
