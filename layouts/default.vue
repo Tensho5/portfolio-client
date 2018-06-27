@@ -2,10 +2,13 @@
   <v-app>
     <v-toolbar v-bind:class="[ stickyToolbar ? 'sticky-toolbar' : '']" app>
       <v-toolbar-title>
-        <v-icon style="color: white" @click="drawer = !drawer">menu</v-icon>
+
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items>
+      <v-toolbar-items v-if="$vuetify.breakpoint.xsOnly">
+        <v-icon class="toggle-menu" @click="drawer = !drawer">menu</v-icon>
+      </v-toolbar-items>
+      <v-toolbar-items v-else>
         <nav class="nav-menu">
           <scrollactive>
             <ul>
@@ -48,16 +51,19 @@
         </v-menu>
       </v-toolbar-items>
     </v-toolbar>
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      app
-    >
-      <v-list dense>
-        <v-list-tile>
-
-        </v-list-tile>
-      </v-list>
+    <v-navigation-drawer v-model="drawer" fixed right app>
+      <nav class="nav-menu">
+        <scrollactive>
+          <ul>
+            <li><a href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
+            <li><a href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
+            <li><a href="#skills" class="scrollactive-item">{{ $t('links.skills') }}</a></li>
+            <li><a href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>
+            <li><a href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>
+            <li><a href="#contact" class="scrollactive-item">{{ $t('links.contact') }}</a></li>
+          </ul>
+        </scrollactive>
+      </nav>
     </v-navigation-drawer>
     <v-content class="pa-0">
       <nuxt/>
