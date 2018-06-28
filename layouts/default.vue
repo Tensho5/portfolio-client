@@ -12,12 +12,12 @@
         <nav class="nav-menu">
           <scrollactive>
             <ul>
-              <li><a href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
-              <li><a href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
-              <li><a href="#skills" class="scrollactive-item">{{ $t('links.skills') }}</a></li>
-              <li><a href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>
-              <li><a href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>
-              <li><a href="#contact" class="scrollactive-item">{{ $t('links.contact') }}</a></li>
+              <li><a v-ripple href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
+              <li><a v-ripple href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
+              <li><a v-ripple href="#skills" class="scrollactive-item">{{ $t('links.skills') }}</a></li>
+              <li><a v-ripple href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>
+              <li><a v-ripple href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>
+              <li><a v-ripple href="#contact" class="scrollactive-item">{{ $t('links.contact') }}</a></li>
             </ul>
           </scrollactive>
         </nav>
