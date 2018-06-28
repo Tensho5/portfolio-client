@@ -55,7 +55,7 @@
         <h3 class="section-title">{{ $t('skills.title') }}</h3>
         <p>{{ $t('skills.introduction') }}</p>
         <v-layout row wrap>
-          <v-flex class="ma-2" md4 sm12>
+          <v-flex class="pa-2" md4 sm12>
             <v-card>
               <v-list subheader two-line>
                 <template v-for="(item, index) in languages">
@@ -76,7 +76,7 @@
               </v-list>
             </v-card>
           </v-flex>
-          <v-flex class="ma-2" md4 sm12>
+          <v-flex class="pa-2" md4 sm12>
             <v-card>
               <v-list subheader two-line>
                 <template v-for="(item, index) in frameworks">
@@ -97,7 +97,7 @@
               </v-list>
             </v-card>
           </v-flex>
-          <v-flex class="ma-2" md4 sm12>
+          <v-flex class="pa-2" md4 sm12>
             <v-card>
               <v-list subheader two-line>
                 <template v-for="(item, index) in otherSkills">
