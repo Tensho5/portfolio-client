@@ -43,12 +43,7 @@
       </v-container>
     </section>
     <section id="portfolio" style="background: rgba(35,35,40,0.8)">
-      <v-parallax src="http://coderpixel.com/demo/matx/img/banner/what-we-do_bg.jpg">
-        <v-layout column align-center justify-center>
-          <h1 class="white--text">Vuetify.js</h1>
-          <h4 class="white--text">Build your application today!</h4>
-        </v-layout>
-      </v-parallax>
+      <education></education>
     </section>
     <section id="skills" class="section-bd-top secondary-bg-color">
       <v-container class="section-common-space text-xs-center">
@@ -150,8 +145,12 @@
 
 <script>
   import axios from "axios";
+  import Education from "~/components/home/Education";
 
   export default {
+    components: {
+      Education
+    },
     data: () => ({
       slides: [
         { src: "/img/banner.jpg", text: ["home.title", "home.introduction"] },
