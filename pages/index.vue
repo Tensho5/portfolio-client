@@ -30,7 +30,7 @@
         </v-layout>
       </v-container>
     </section>
-    <section class="section-bd-top secondary-bg-color">
+    <section class="section-bd-top">
       <v-container class="section-common-space">
         <h3 class="section-title">{{ $t('skills.title') }}</h3>
         <v-layout row wrap>
@@ -42,8 +42,11 @@
         </v-layout>
       </v-container>
     </section>
-    <section id="portfolio" style="background: rgba(35,35,40,0.8)">
-      <education></education>
+    <section id="hobbies" class="secondary-bg-color">
+      <hobbies />
+    </section>
+    <section id="portfolio">
+      <education />
     </section>
     <section id="skills" class="section-bd-top secondary-bg-color">
       <v-container class="section-common-space text-xs-center">
@@ -145,10 +148,12 @@
 
 <script>
   import axios from "axios";
+  import Hobbies from "~/components/home/Hobbies";
   import Education from "~/components/home/Education";
 
   export default {
     components: {
+      Hobbies,
       Education
     },
     data: () => ({

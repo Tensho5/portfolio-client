@@ -15,7 +15,7 @@
           <path d="M74.3132 0C47.0043 2.44032e-05 50.175 30 7.9179 30H144.27C99.4571 30 101.622 -2.44032e-05 74.3132 0Z" transform="translate(-7.38794 0.5)" fill="#12132C"/>
         </svg>
         <div class="slider-button" :class="{'grabbing': dragging}" @mousedown="startDrag">
-          <i class="fas fa-thermometer-empty slider-icon"></i>
+          <v-icon>mdi-school</v-icon>
         </div>
       </div>
     </div>

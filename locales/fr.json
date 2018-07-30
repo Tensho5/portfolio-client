@@ -33,6 +33,29 @@
       "title": "Divers"
     }
   },
+  "hobbies": {
+    "title": "Loisirs & Activités",
+    "music": {
+      "title": "Musique",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation suscipit ad minim veniam."
+    },
+    "shows": {
+      "title": "Séries TV",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation suscipit ad minim veniam."
+    },
+    "fitness": {
+      "title": "Fitness",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation suscipit ad minim veniam."
+    },
+    "technologies": {
+      "title": "Technologie",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation suscipit ad minim veniam."
+    },
+    "friends": {
+      "title": "Sorties entre amis",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, exerci tation suscipit ad minim veniam."
+    }
+  },
   "contact": {
     "title": "Contact",
     "introduction": "N'hésitez pas à me contacter via ce formulaire pour toutes demandes, je me ferais un plaisir de vous répondre dans les plus brefs délais."
