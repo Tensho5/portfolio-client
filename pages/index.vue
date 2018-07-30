@@ -17,32 +17,21 @@
         </v-carousel-item>
       </v-carousel>
     </section>
-    <section id="about">
-      <v-container class="section-common-space">
+    <section id="about" style="background-color: white">
+      <v-container>
         <h3 class="section-title">{{ $t('about.title') }}</h3>
         <v-layout row wrap>
           <v-flex md6 sm12>
             <p>{{ $t('about.introduction') }}</p>
-          </v-flex>
-          <v-flex md6 sm12>
             <v-btn color="primary">{{ $t('home.about') }}</v-btn>
           </v-flex>
-        </v-layout>
-      </v-container>
-    </section>
-    <section class="section-bd-top">
-      <v-container class="section-common-space">
-        <h3 class="section-title">{{ $t('skills.title') }}</h3>
-        <v-layout row wrap>
           <v-flex md6 sm12>
-            <p data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">{{ $t('about.introduction') }}</p>
-          </v-flex>
-          <v-flex md6 sm12>
+
           </v-flex>
         </v-layout>
       </v-container>
     </section>
-    <section id="hobbies" class="secondary-bg-color">
+    <section id="hobbies" class="section-bd-top secondary-bg-color">
       <hobbies />
     </section>
     <section id="portfolio">
