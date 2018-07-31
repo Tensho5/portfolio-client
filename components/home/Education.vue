@@ -1,19 +1,31 @@
 <template>
   <div class="main-container" :class="{'grabbing': dragging}" @mousemove="mouseMoving" @mouseup="stopDrag">
-    <h3 class="title-date">{{ currentDate | round }}</h3>
-    <div class="calendar">
-      <div class="date-item" v-for="date in dates" :key="date" :style="tempElementStyle(date)">
-        <span>{{ date }}</span><br>
-        <span v-if="date" class="date-line">|</span>
+    <template v-if="currentExperience">
+      <v-container>
+        <v-layout row wrap class="experience-section">
+          <v-flex md2 sm12>
+            <h3 class="title-date">{{ currentExperience.date }}</h3>
+          </v-flex>
+          <v-flex md10 sm12>
+            <p style="color: white; font-size: 1.4rem">{{ currentExperience.title }}</p>
+            <p style="color: white; font-size: 1.2rem">{{ currentExperience.description }}</p>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </template>
+    <div class="timeline">
+      <div class="date-item" v-for="(experience, index) in experiences" :key="index" :style="tempElementStyle(experience.date)">
+        <span>{{ experience.date }}</span><br>
+        <span class="date-line">|</span>
       </div>
     </div>
     <div class="lower-container">
       <div class="slider-container" :style="sliderStyle">
         <svg class="slider-wave">
-          <path d="M74.3132 0C47.0043 2.44032e-05 50.175 30 7.9179 30H144.27C99.4571 30 101.622 -2.44032e-05 74.3132 0Z" transform="translate(-7.38794 0.5)" fill="rgba(255,82,82,.4)"/>
+          <path d="M74.3132 0C47.0043 2.44032e-05 50.175 30 7.9179 30H144.27C99.4571 30 101.622 -2.44032e-05 74.3132 0Z" transform="translate(-7.38794 0)" fill="rgba(255,82,82,.5)"/>
         </svg>
         <div class="slider-button" :class="{'grabbing': dragging}" @mousedown="startDrag">
-          <v-icon style="padding-left: 13px; padding-top: 13px">mdi-school</v-icon>
+          <v-icon style="padding-left: 13px; padding-top: 13px">school</v-icon>
         </div>
       </div>
     </div>
@@ -24,18 +36,33 @@
 const sliderMinX = 0;
 const sliderMaxX = 420;
 
-
 export default {
   data: () =>  ({
     dragging: false,
-    initialMouseX: 0,
     sliderX: 0,
+    initialMouseX: 0,
     initialSliderX: 0,
-    dates: [2011, null, 2013, 2014, 2015, null, 2017, 2018]
+    experiences: [
+      { date: 2011, title: "Lycée Dumont D'urville - Caen", description: "Obtention du bac scientifique options sciences de l'ingénieur et anglais européen" },
+      { date: 2012, title: null, description: "" },
+      { date: 2013, title: "IUT Informatique - Ifs Campus 3", description: "Obtention du DUT Informatique option génie logiciel" },
+      { date: 2014, title: "Licence ATC Webmestre - Caen campus 2", description: "Obtention de la licence Activités et Techniques de Communication Webmestre" },
+      { date: 2015, title: "Developpeur Web - Agence Web Interactive", description: "Développement de sites web sur mesure avec le framework PHP Laravel" },
+      { date: 2016, title: "Developpeur Web - Agence Web Interactive", description: "Développement de sites web sur mesure avec le framework PHP Laravel" },
+      { date: 2017, title: "Developpeur Web - NCI", description: "Développement d'interfaces web dans le domaine de la logistique" },
+      { date: 2018, title: "Developpeur Web - CICD", description: "Développement d'interfaces web dans le domaine de la comptabilité" },
+    ]
   }),
-  filters: {
-    round (num) {
-      return Math.round(num);
+  computed: {
+    currentExperience () {
+      const rangeStart = 2011;
+      const range = 7;
+      const currentDate = Math.round((this.sliderX / sliderMaxX * range) + rangeStart);
+      const currentExperience = this.experiences.find((experience) => experience.date === currentDate);
+      if (currentExperience) return currentExperience;
+    },
+    sliderStyle () {
+      return `transform: translate3d(${this.sliderX}px,0,0)`;
     }
   },
   methods: {
@@ -62,17 +89,10 @@ export default {
       const distY = (diff/nearDistance) - 1;
 
       const elementY = Math.min(distY*liftDistance, 0);
-      return `transform: translate3d(0, ${elementY}px, 0)`;
-    }
-  },
-  computed: {
-    currentDate () {
-      const rangeStart = 2011;
-      const range = 7;
-      return (this.sliderX / sliderMaxX * range) + rangeStart;
+      return `transform: translate3d(0, ${elementY}px, 0);`;
     },
-    sliderStyle () {
-      return `transform: translate3d(${this.sliderX}px,0,0)`;
+    showTips() {
+      this.dialog = true;
     }
   }
 };
@@ -88,16 +108,18 @@ export default {
   right: 0;
 }
 
-.title-date {
+.experience-section {
   position: absolute;
   bottom: 300px;
   user-select: none;
-  font-size: 5rem;
   width: 100%;
-  text-align: center;
 }
 
-.calendar {
+.title-date {
+  font-size: 5rem;
+}
+
+.timeline {
   left: calc(50% - 250px);
   position: absolute;
   bottom: -5px;
@@ -118,7 +140,7 @@ export default {
 }
 
 .lower-container {
-  background-color: rgba(255,82,82,.4);
+  background-color: rgba(255,82,82,.5);
 }
 
 .slider-wave {
@@ -142,7 +164,7 @@ export default {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
 
   cursor: grab;
   cursor: -webkit-grab;
