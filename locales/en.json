@@ -18,7 +18,10 @@
   },
   "about": {
     "title": "About",
-    "introduction": "Passionate about the web for many years, I started to acquire skills in this area through my formation. Obtaining my professional ATC Webmaster license has given me a solid foundation for designing a website. I was able to deepen this knowledge by my professional experience but also by exercising in my free time a constant watch on the technologies and languages ​​of tomorrow. I practice today for more than 4 years the job of web developer.'"
+    "introduction": {
+      "part1": "Passionate about the web for many years, I started to acquire skills in this area through my formation. Obtaining my professional ATC Webmaster license has given me a solid foundation for designing a website.",
+      "part2": "I was able to deepen this knowledge by my professional experience but also by exercising in my free time a constant watch on the technologies and languages ​​of tomorrow. I practice today for more than 4 years the job of web developer."
+    }
   },
   "skills": {
     "title": "Skills",

@@ -8,14 +8,16 @@
       </v-tab>
       <v-tab-item v-for="(tab, index) in tabs" :id="`tab-${index}`" :key="index">
         <v-container class="mt-5 mb-5">
-          <h4 class="title pb-3 mb-3">{{ $t(tab.title) }}</h4>
-          <v-flex sm6 xs12>
-            <p>{{ $t(tab.description) }}</p>
-            <p>{{ $t(tab.description) }}</p>
-          </v-flex>
-          <v-flex sm6 xs12>
-
-          </v-flex>
+          <v-layout row wrap>
+            <v-flex md6 sm12 class="pr-5">
+              <h4 class="title pb-3 mb-3">{{ $t(tab.title) }}</h4>
+              <p>{{ $t(tab.description) }}</p>
+              <p>{{ $t(tab.description) }}</p>
+            </v-flex>
+            <v-flex md6 sm12 class="pl-5">
+              <img :src="tab.src" width="450" alt="" class="bordered-img">
+            </v-flex>
+          </v-layout>
         </v-container>
       </v-tab-item>
     </v-tabs>
@@ -28,11 +30,11 @@
     name: "Hobbies",
     data: () => ({
       tabs: [
-        { icon: "headset", title:"hobbies.music.title", description: "hobbies.music.description" },
-        { icon: "live_tv", title: "hobbies.shows.title", description: "hobbies.shows.description" },
-        { icon: "fitness_center", title: "hobbies.fitness.title", description: "hobbies.fitness.description" },
-        { icon: "computer", title: "hobbies.technologies.title", description: "hobbies.technologies.description" },
-        { icon: "mdi-beer", title: "hobbies.friends.title", description: "hobbies.friends.description" }
+        { icon: "headset", title:"hobbies.music.title", description: "hobbies.music.description", src: "/img/banner.jpg" },
+        { icon: "live_tv", title: "hobbies.shows.title", description: "hobbies.shows.description", src: "/img/banner.jpg" },
+        { icon: "fitness_center", title: "hobbies.fitness.title", description: "hobbies.fitness.description", src: "/img/banner.jpg" },
+        { icon: "computer", title: "hobbies.technologies.title", description: "hobbies.technologies.description", src: "/img/banner.jpg" },
+        { icon: "mdi-beer", title: "hobbies.friends.title", description: "hobbies.friends.description", src: "/img/banner.jpg" }
       ]
     })
   }
@@ -60,4 +62,9 @@
     .tabs__div
       border-right: 1px solid #e0e0e0
       min-width: 110px !important
+
+  .bordered-img
+    border: 6px solid #fff
+    border-radius: 3px
+    box-shadow: 0 1px 4px rgba(0,0,0,.24)
 </style>

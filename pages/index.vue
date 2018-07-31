@@ -18,15 +18,16 @@
       </v-carousel>
     </section>
     <section id="about" style="background-color: white">
-      <v-container>
-        <h3 class="section-title">{{ $t('about.title') }}</h3>
+      <v-container class="section-common-space">
         <v-layout row wrap>
-          <v-flex md6 sm12>
-            <p>{{ $t('about.introduction') }}</p>
-            <v-btn color="primary">{{ $t('home.about') }}</v-btn>
+          <v-flex md4 sm12 class="pr-5">
+            <img src="/img/profile.jpg" width="250" alt="" class="bordered-img">
           </v-flex>
-          <v-flex md6 sm12>
-
+          <v-flex md8 sm12 class="pl-5">
+            <h3 class="section-title">{{ $t('about.title') }}</h3>
+            <p>{{ $t('about.introduction.part1') }}</p>
+            <p>{{ $t('about.introduction.part2') }}</p>
+            <v-btn style="font-size: 700" color="primary">{{ $t('home.about') }}</v-btn>
           </v-flex>
         </v-layout>
       </v-container>
@@ -34,8 +35,10 @@
     <section id="hobbies" class="section-bd-top secondary-bg-color">
       <hobbies />
     </section>
-    <section id="portfolio">
-      <education />
+    <section id="education">
+      <v-parallax src="https://matx.coderpixel.com/wp/wp-content/uploads/2016/04/keyboard.jpg?id=2809">
+        <education />
+      </v-parallax>
     </section>
     <section id="skills" class="section-bd-top secondary-bg-color">
       <v-container class="section-common-space text-xs-center">
@@ -102,6 +105,8 @@
           </v-flex>
         </v-layout>
       </v-container>
+    </section>
+    <section id="portfolio">
     </section>
     <section id="blog">
     </section>

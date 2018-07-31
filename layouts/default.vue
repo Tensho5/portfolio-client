@@ -2,54 +2,58 @@
   <v-app>
     <v-toolbar v-bind:class="[ stickyToolbar ? 'sticky-toolbar' : '']" app>
       <v-toolbar-title>
-
+        Maxime Leclerc
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items v-if="$vuetify.breakpoint.xsOnly">
-        <v-icon class="toggle-menu" @click="drawer = !drawer">menu</v-icon>
-      </v-toolbar-items>
-      <v-toolbar-items v-else>
-        <nav class="nav-menu">
-          <scrollactive>
-            <ul>
-              <li><a v-ripple href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
-              <li><a v-ripple href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
-              <li><a v-ripple href="#skills" class="scrollactive-item">{{ $t('links.skills') }}</a></li>
-              <li><a v-ripple href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>
-              <li><a v-ripple href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>
-              <li><a v-ripple href="#contact" class="scrollactive-item">{{ $t('links.contact') }}</a></li>
-            </ul>
-          </scrollactive>
-        </nav>
-        <v-menu offset-y>
-          <v-btn flat slot="activator">
-            <img v-if="$i18n.locale === 'fr'" src="https://countryflags.io/fr/flat/32.png" width="32px">
-            <img v-else src="https://countryflags.io/us/flat/32.png" width="32px">
-          </v-btn>
-          <v-list>
-            <v-list-tile avatar @click="setLanguage('fr')">
-              <v-list-tile-action>
-                <v-avatar :size="32" :tile="true">
-                  <img src="https://countryflags.io/fr/flat/32.png" alt="avatar">
-                </v-avatar>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ $t('links.french') }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile @click="setLanguage('en')">
-              <v-list-tile-action>
-                <v-avatar :size="32" :tile="true">
-                  <img src="https://countryflags.io/us/flat/32.png" alt="avatar">
-                </v-avatar>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ $t('links.english') }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-        </v-menu>
-      </v-toolbar-items>
+      <template v-if="false">
+        <v-toolbar-items>
+          <v-icon class="toggle-menu" @click="drawer = !drawer">menu</v-icon>
+        </v-toolbar-items>
+      </template>
+      <template v-else>
+        <v-toolbar-items>
+          <nav class="nav-menu">
+            <scrollactive>
+              <ul>
+                <li><a v-ripple href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
+                <li><a v-ripple href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
+                <li><a v-ripple href="#skills" class="scrollactive-item">{{ $t('links.skills') }}</a></li>
+                <li><a v-ripple href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>
+                <li><a v-ripple href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>
+                <li><a v-ripple href="#contact" class="scrollactive-item">{{ $t('links.contact') }}</a></li>
+              </ul>
+            </scrollactive>
+          </nav>
+          <v-menu offset-y>
+            <v-btn flat slot="activator">
+              <img v-if="$i18n.locale === 'fr'" src="https://countryflags.io/fr/flat/32.png" width="32px">
+              <img v-else src="https://countryflags.io/us/flat/32.png" width="32px">
+            </v-btn>
+            <v-list>
+              <v-list-tile avatar @click="setLanguage('fr')">
+                <v-list-tile-action>
+                  <v-avatar :size="32" :tile="true">
+                    <img src="https://countryflags.io/fr/flat/32.png" alt="avatar">
+                  </v-avatar>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ $t('links.french') }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+              <v-list-tile @click="setLanguage('en')">
+                <v-list-tile-action>
+                  <v-avatar :size="32" :tile="true">
+                    <img src="https://countryflags.io/us/flat/32.png" alt="avatar">
+                  </v-avatar>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ $t('links.english') }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list>
+          </v-menu>
+        </v-toolbar-items>
+      </template>
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" fixed right app>
       <nav class="nav-menu">
