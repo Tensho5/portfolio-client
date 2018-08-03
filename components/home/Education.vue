@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container" :class="{'grabbing': dragging}" @mousemove="mouseMoving" @mouseup="stopDrag">
+  <div class="main-container elevation-4" :class="{'grabbing': dragging}" @mousemove="mouseMoving" @mouseup="stopDrag">
     <template v-if="currentExperience">
       <v-container>
         <v-layout row wrap class="experience-section">
@@ -7,8 +7,14 @@
             <h3 class="title-date">{{ currentExperience.date }}</h3>
           </v-flex>
           <v-flex md10 sm12>
-            <p style="color: white; font-size: 1.4rem">{{ currentExperience.title }}</p>
-            <p style="color: white; font-size: 1.2rem">{{ currentExperience.description }}</p>
+            <template v-for="(education, index) in currentExperience.education">
+              <p :key="index" class="title">{{ education.title }}</p>
+              <p :key="index" class="description">{{ education.description }}</p>
+            </template>
+            <template v-for="(job, index) in currentExperience.job">
+              <p :key="index" class="title">{{ job.title }}</p>
+              <p :key="index" class="description">{{ job.description }}</p>
+            </template>
           </v-flex>
         </v-layout>
       </v-container>
@@ -22,10 +28,10 @@
     <div class="lower-container">
       <div class="slider-container" :style="sliderStyle">
         <svg class="slider-wave">
-          <path d="M74.3132 0C47.0043 2.44032e-05 50.175 30 7.9179 30H144.27C99.4571 30 101.622 -2.44032e-05 74.3132 0Z" transform="translate(-7.38794 0)" fill="rgba(255,82,82,.5)"/>
+          <path d="M74.3132 0C47.0043 2.44032e-05 50.175 30 7.9179 30H144.27C99.4571 30 101.622 -2.44032e-05 74.3132 0Z" transform="translate(-7.38794 0)" fill="rgba(255,82,82,.6)"/>
         </svg>
         <div class="slider-button" :class="{'grabbing': dragging}" @mousedown="startDrag">
-          <v-icon style="padding-left: 13px; padding-top: 13px">school</v-icon>
+          <v-icon class="slider-icon">mdi-school</v-icon>
         </div>
       </div>
     </div>
@@ -42,16 +48,19 @@ export default {
     sliderX: 0,
     initialMouseX: 0,
     initialSliderX: 0,
-    experiences: [
-      { date: 2011, title: "Lycée Dumont D'urville - Caen", description: "Obtention du bac scientifique options sciences de l'ingénieur et anglais européen" },
-      { date: 2012, title: null, description: "" },
-      { date: 2013, title: "IUT Informatique - Ifs Campus 3", description: "Obtention du DUT Informatique option génie logiciel" },
-      { date: 2014, title: "Licence ATC Webmestre - Caen campus 2", description: "Obtention de la licence Activités et Techniques de Communication Webmestre" },
-      { date: 2015, title: "Developpeur Web - Agence Web Interactive", description: "Développement de sites web sur mesure avec le framework PHP Laravel" },
-      { date: 2016, title: "Developpeur Web - Agence Web Interactive", description: "Développement de sites web sur mesure avec le framework PHP Laravel" },
-      { date: 2017, title: "Developpeur Web - NCI", description: "Développement d'interfaces web dans le domaine de la logistique" },
-      { date: 2018, title: "Developpeur Web - CICD", description: "Développement d'interfaces web dans le domaine de la comptabilité" },
-    ]
+		experiences: [
+			{ date: 2011, education: [{ title: "Lycée Dumont D'urville - Caen", description: "Obtention du Bac scientifique options sciences de l'ingénieur et anglais européen" }] },
+			{ date: 2012, education: [{ title: "IUT Informatique - Ifs Campus 3", description: "Obtention du DUT Informatique option génie logiciel" }] },
+			{ date: 2013, education: [{ title: "IUT Informatique - Ifs Campus 3", description: "Obtention du DUT Informatique option génie logiciel" }] },
+			{
+				date: 2014, education: [{ title: "Licence ATC Webmestre - Caen campus 2", description: "Obtention de la licence Activités et Techniques de Communication Webmestre" }],
+				job: [{ title: "Développeur Web (Stage) - Chambre de métiers de Caen", description: "Développement web sur le site 360 artisans éclairés avec le framework PHP Symfony 2" }]
+			},
+			{ date: 2015, job: [{ title: "Developpeur Web (CDI) - Agence Web Interactive", description: "Réalisation de site web sur mesure avec le framework PHP Laravel" }] },
+			{ date: 2016, job: [{ title: "Developpeur Web (CDI) - Agence Web Interactive", description: "Réalisation de site web sur mesure avec le framework PHP Laravel" }] },
+			{ date: 2017, job: [{ title: "Developpeur Web (CDI) - NCI", description: "Développement d'interfaces web dans le domaine de la logistique" }] },
+			{ date: 2018, job: [{ title: "Developpeur Web (CDD) - CICD", description: "Développement d'interfaces web dans le domaine de la comptabilité" }] },
+		],
   }),
   computed: {
     currentExperience () {
@@ -85,100 +94,12 @@ export default {
       const nearDistance = 3;
       const liftDistance = 12;
 
-      const diff = Math.abs(this.currentDate-tempDate);
+      const diff = Math.abs(this.currentExperience.date-tempDate);
       const distY = (diff/nearDistance) - 1;
 
       const elementY = Math.min(distY*liftDistance, 0);
       return `transform: translate3d(0, ${elementY}px, 0);`;
-    },
-    showTips() {
-      this.dialog = true;
     }
   }
 };
 </script>
-
-<style>
-
-.main-container {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.experience-section {
-  position: absolute;
-  bottom: 300px;
-  user-select: none;
-  width: 100%;
-}
-
-.title-date {
-  font-size: 5rem;
-}
-
-.timeline {
-  left: calc(50% - 250px);
-  position: absolute;
-  bottom: -5px;
-  user-select: none;
-}
-
-.date-item {
-  text-align: center;
-  display: inline-block;
-  width: 40px;
-  font-weight: 700;
-  color: #f8f8f8;
-  margin: 0 10px 0 10px;
-}
-
-.date-line {
-  font-size: 7px;
-}
-
-.lower-container {
-  background-color: rgba(255,82,82,.5);
-}
-
-.slider-wave {
-  z-index: 500;
-  position:relative;
-  top: -30px;
-}
-
-.slider-container {
-  width: 150px;
-  height: 80px;
-  margin-top: -30px;
-  margin-left: calc(50% - 287px);
-  position: relative;
-}
-.slider-button {
-  position: absolute;
-  z-index: 999;
-  left: 42px;
-  top: -25px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #f8f8f8;
-
-  cursor: grab;
-  cursor: -webkit-grab;
-  cursor: -moz-grab;
-}
-.grabbing {
-  cursor: grabbing;
-  cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
-}
-
-.slider-icon {
-  margin-top: 16px;
-  margin-left: 21px;
-  color: #232328;
-}
-</style>
