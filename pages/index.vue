@@ -21,13 +21,18 @@
       <v-container class="section-common-space">
         <v-layout row wrap>
           <v-flex md4 sm12 class="pr-5">
-            <img src="/img/profile.jpg" width="250" alt="" class="bordered-img">
+            <img src="/img/profile.jpg" width="250" alt="" class="bordered-img profile">
           </v-flex>
-          <v-flex md8 sm12 class="pl-5">
-            <h3 class="section-title">{{ $t('about.title') }}</h3>
-            <p>{{ $t('about.introduction.part1') }}</p>
-            <p>{{ $t('about.introduction.part2') }}</p>
-            <v-btn style="font-size: 700" color="primary">{{ $t('home.about') }}</v-btn>
+          <v-flex md8 sm12>
+            <div class="pl-5">
+              <h3 class="section-title">{{ $t('about.title') }}</h3>
+              <p>{{ $t('about.introduction.part1') }}</p>
+              <p>{{ $t('about.introduction.part2') }}</p>
+            </div>
+            <div class="mt-4 ml-3 pl-4">
+              <v-btn color="primary">{{ $t('about.downloadResume') }}</v-btn>
+              <v-btn color="secondary">{{ $t('about.contactMe') }}</v-btn>
+            </div>
           </v-flex>
         </v-layout>
       </v-container>

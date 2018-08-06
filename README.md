@@ -19,4 +19,7 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## License
+
+- The web application falls under the [MIT License](https://choosealicense.com/licenses/mit/)
+- The content and design are under [exclusive copyright](https://choosealicense.com/no-license/)

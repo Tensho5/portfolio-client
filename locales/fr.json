@@ -21,7 +21,9 @@
     "introduction": {
       "part1": "Passionné par le web depuis de nombreuses années, j'ai commencé à acquerir des compétences dans ce domaine grâce à ma formation. L'obtention de ma licence professionnelle ATC Webmestre m'a permis d'avoir des bases solides pour la conception d'un site web.",
       "part2": "J'ai ensuite pu approfondir ces connaissances de part mon expérience professionnelle mais aussi en exercant sur mon temps libre une veille constante sur les technologies et langages de demain. J'exerce aujourd'hui depuis plus de 4 ans le métier de développeur web."
-    }
+    },
+    "downloadResume": "Télécharger mon CV",
+    "contactMe": "Me contacter"
   },
   "skills": {
     "title": "Compétences",
