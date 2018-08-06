@@ -1,21 +1,12 @@
 <template>
   <div>
     <section id="home">
-      <v-carousel :hide-delimiters="false"  style="height: 100vh; background: rgba(35,35,40,0.8)">
-        <v-carousel-item style="background: rgba(0, 0, 0, .9)" v-for="(slide, i) in slides" :src="slide.src" :key="i" transition="fade" reverse-transition="fade">
-          <slot>
-            <v-container fill-height>
-              <v-layout row wrap align-center>
-                <div style="transition: none; line-height: 27px; border-width: 0px; text-transform: uppercase; font-weight: 900; font-size: 30px; color: white;">
-                  <span data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" v-for="(text, i) in slide.text" :key="i">{{ $t(text) }}</span>
-                </div>
-                <v-btn color="primary">{{ $t('home.about') }}</v-btn>
-                <v-btn color="secondary">{{ $t('home.contact') }}</v-btn>
-              </v-layout>
-            </v-container>
-          </slot>
-        </v-carousel-item>
-      </v-carousel>
+      <v-parallax src="/img/banner-computer.jpg" style="height: 700px">
+        <v-layout column align-center justify-center>
+          <h1 class="white--text">Bonjour</h1>
+          <h4 class="white--text">Bienvenue sur mon portfolio</h4>
+        </v-layout>
+      </v-parallax>
     </section>
     <section id="about" style="background-color: white">
       <v-container class="section-common-space">
@@ -41,7 +32,7 @@
       <hobbies />
     </section>
     <section id="education">
-      <v-parallax src="https://matx.coderpixel.com/wp/wp-content/uploads/2016/04/keyboard.jpg?id=2809">
+      <v-parallax style="height: 400px;" src="http://coderpixel.com/demo/matx/img/banner/what-we-do_bg.jpg">
         <education />
       </v-parallax>
     </section>
@@ -61,7 +52,10 @@
                       <img :src="item.avatar">
                     </v-list-tile-avatar>
                     <v-list-tile-content>
-                      <v-list-tile-title v-html="item.title"></v-list-tile-title>
+                      <v-list-tile-title>
+                        <span>{{ item.title }}</span>
+                        <span class="progress-percent">{{ item.progress }}&nbsp;%</span>
+                      </v-list-tile-title>
                       <v-list-tile-sub-title>
                         <v-progress-linear :height="4" v-model="item.progress"></v-progress-linear>
                       </v-list-tile-sub-title>
@@ -82,7 +76,10 @@
                       <img :src="item.avatar">
                     </v-list-tile-avatar>
                     <v-list-tile-content>
-                      <v-list-tile-title v-html="item.title"></v-list-tile-title>
+                      <v-list-tile-title>
+                        <span>{{ item.title }}</span>
+                        <span class="progress-percent">{{ item.progress }}&nbsp;%</span>
+                      </v-list-tile-title>
                       <v-list-tile-sub-title>
                         <v-progress-linear :height="4" v-model="item.progress"></v-progress-linear>
                       </v-list-tile-sub-title>
@@ -100,8 +97,8 @@
                   <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
                   <v-list-tile v-else :key="item.title">
                     <v-list-tile-content>
-                      <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                      <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                      <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                      <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
                     </v-list-tile-content>
                   </v-list-tile>
                 </template>
@@ -163,27 +160,27 @@
       ],
       languages: [
         { header: 'skills.languages.title' },
-        { avatar: '/img/php.png', title: 'PHP5/7', progress: 85 },
+        { avatar: '/img/php.jpg', title: 'PHP5/7', progress: 80 },
         { divider: true, inset: true },
-        { avatar: '/img/javascript.png', title: 'JS(ES6)/TS', progress: 85 },
+        { avatar: '/img/javascript.png', title: 'JS(ES6)/TS', progress: 80 },
         { divider: true, inset: true },
-        { avatar: '/img/mysql.png', title: 'SQL', progress: 70 },
+        { avatar: '/img/mysql.png', title: 'MySQL', progress: 70 },
         { divider: true, inset: true },
-        { avatar: '/img/html5.png', title: 'HTML5/CSS3', progress: 65 },
+        { avatar: '/img/html5.png', title: 'HTML5/CSS3', progress: 70 },
         { divider: true, inset: true },
-        { avatar: '/img/graphql.png', title: 'GraphQL', progress: 35 },
+        { avatar: '/img/graphql.png', title: 'GraphQL', progress: 30 },
       ],
       frameworks: [
         { header: 'skills.frameworks.title' },
-        { avatar: '/img/laravel.png', title: 'Laravel 5', progress: 90 },
+        { avatar: '/img/laravel.png', title: 'Laravel 5', progress: 80 },
         { divider: true, inset: true },
-        { avatar: '/img/vue.png', title: 'VueJS', progress: 90 },
+        { avatar: '/img/vue.png', title: 'VueJS', progress: 80 },
         { divider: true, inset: true },
-        { avatar: '/img/expressjs.png', title: 'ExpressJS', progress: 75 },
+        { avatar: '/img/expressjs.png', title: 'ExpressJS', progress: 70 },
         { divider: true, inset: true },
-        { avatar: '/img/angular.png', title: 'Angular 4+', progress: 60 },
+        { avatar: '/img/angular.png', title: 'Angular 4+', progress: 40 },
         { divider: true, inset: true },
-        { avatar: '/img/symfony.png', title: 'Symfony 3', progress: 40 },
+        { avatar: '/img/symfony.png', title: 'Symfony 3', progress: 30 },
       ],
       otherSkills: [
         { header: 'skills.others.title' },

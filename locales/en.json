@@ -25,6 +25,15 @@
     "downloadResume": "Download my CV",
     "contactMe": "Contact me"
   },
+  "experiences": {
+    "education": "Education",
+    "job": "Job",
+    "experiences": {
+      "hightSchool": "Scientific BAC sciences of engineer and european english specialties",
+      "dut": "University degree in computer sciences software engineering specialty",
+      "licence": "Professionnal licence in web development / webmaster"
+    }
+  },
   "skills": {
     "title": "Skills",
     "introduction": "From the development of features to the design of a dynamic and intuitive customer interface, my skills allow me to create a tailor-made website.",

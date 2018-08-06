@@ -30,11 +30,11 @@
     name: "Hobbies",
     data: () => ({
       tabs: [
-        { icon: "headset", title:"hobbies.music.title", description: "hobbies.music.description", src: "/img/banner.jpg" },
-        { icon: "live_tv", title: "hobbies.shows.title", description: "hobbies.shows.description", src: "/img/banner.jpg" },
-        { icon: "fitness_center", title: "hobbies.fitness.title", description: "hobbies.fitness.description", src: "/img/banner.jpg" },
+        { icon: "headset", title:"hobbies.music.title", description: "hobbies.music.description", src: "/img/headphone.jpg" },
+        { icon: "live_tv", title: "hobbies.shows.title", description: "hobbies.shows.description", src: "/img/tvshow.jpg" },
+        { icon: "fitness_center", title: "hobbies.fitness.title", description: "hobbies.fitness.description", src: "/img/sport.jpg" },
         { icon: "computer", title: "hobbies.technologies.title", description: "hobbies.technologies.description", src: "/img/banner.jpg" },
-        { icon: "mdi-beer", title: "hobbies.friends.title", description: "hobbies.friends.description", src: "/img/banner.jpg" }
+        { icon: "mdi-beer", title: "hobbies.friends.title", description: "hobbies.friends.description", src: "/img/cheers.jpg" }
       ]
     })
   }

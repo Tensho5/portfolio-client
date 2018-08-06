@@ -2,7 +2,7 @@
   <v-app>
     <v-toolbar v-bind:class="[ stickyToolbar ? 'sticky-toolbar' : '']" app>
       <v-toolbar-title>
-        Maxime Leclerc
+
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <template v-if="false">
