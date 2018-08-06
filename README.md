@@ -1,4 +1,4 @@
-# portfolio
+# Portfolio - Front made with Nuxt
 
 > Maxime Leclerc - Full stack web developer
 
@@ -23,3 +23,5 @@ $ npm run generate
 
 - The web application falls under the [MIT License](https://choosealicense.com/licenses/mit/)
 - The content and design are under [exclusive copyright](https://choosealicense.com/no-license/)
+
+Feel free to contact me for any questions at leclercmaxime14@gmail.com
