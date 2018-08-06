@@ -55,11 +55,11 @@
       left: 0
       bottom: 0
 
-  .tabs__bar
+  .v-tabs__bar
     box-shadow: 0 1px 4px rgba(0,0,0,.26)
     margin: 0 auto
     max-width: 550px
-    .tabs__div
+    .v-tabs__div
       border-right: 1px solid #e0e0e0
       min-width: 110px !important
 
