@@ -32,7 +32,7 @@
       <hobbies />
     </section>
     <section id="education">
-      <v-parallax style="height: 400px;" src="http://coderpixel.com/demo/matx/img/banner/what-we-do_bg.jpg">
+      <v-parallax style="height: 600px;" src="http://coderpixel.com/demo/matx/img/banner/what-we-do_bg.jpg">
         <education />
       </v-parallax>
     </section>

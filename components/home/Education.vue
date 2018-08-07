@@ -7,15 +7,15 @@
             <h3 class="title-date">{{ currentExperience.date }}</h3>
           </v-flex>
           <v-flex md10 sm12>
-            <h3 v-if="hasEducation" class="section-title" style="color: white; font-size: 1.8rem; margin: 0 0 10px;">Education</h3>
+            <h3 v-if="hasEducation" class="section-title">Education</h3>
             <template v-for="(education, i) in currentExperience.education">
-              <p :key="`title-education-${i}`" class="title">{{ education.title }}</p>
-              <p :key="`description-education-${i}`" class="description">{{ education.description }}</p>
+              <p :key="`title-education-${i}`" class="title" v-html="education.title"></p>
+              <p :key="`description-education-${i}`" class="description" v-html="education.description"></p>
             </template>
-            <h3 v-if="hasJob" class="section-title" style="color: white; font-size: 1.8rem; margin: 0 0 10px;">Job</h3>
+            <h3 v-if="hasJob" class="section-title">Job</h3>
             <template v-for="(job, j) in currentExperience.job">
-              <p :key="`title-job-${j}`" class="title">{{ job.title }}</p>
-              <p :key="`description-job-${j}`" class="description">{{ job.description }}</p>
+              <p :key="`title-job-${j}`" class="title" v-html="job.title"></p>
+              <p :key="`description-job-${j}`" class="description" v-html="job.description"></p>
             </template>
           </v-flex>
         </v-layout>
@@ -60,19 +60,23 @@ export default {
 			{
 				date: 2014, education: [{ title: "Licence ATC Webmestre - Caen campus 2", description: "Obtention de la licence Activités et Techniques de Communication Webmestre" }],
         job: [
-          { title: "Developpeur Web (CDI) - Agence Web Interactive", description: "Réalisation de site web sur mesure avec le framework PHP Laravel" }
+          { title: "Développeur Web (CDI) - Agence Web Interactive", description: "Développement de sites web sur mesure.<ul><li>Développment de sites web sur mesure avec le framework PHP Laravel principalement pour des sites de gestion de contenu et sites marchands</li></ul>" },
         ]
 			},
-			{ date: 2015, job: [{ title: "Developpeur Web (CDI) - Agence Web Interactive", description: "Réalisation de site web sur mesure avec le framework PHP Laravel" }] },
-			{ date: 2016, job: [{ title: "Developpeur Web (CDI) - Agence Web Interactive", description: "Réalisation de site web sur mesure avec le framework PHP Laravel" }] },
+			{ date: 2015, job: [{ title: "Développeur Web (CDI) - Web Interactive", description: "Développement de sites web sur mesure.<ul><li>Développment de sites web sur mesure avec le framework PHP Laravel principalement pour des sites de gestion de contenu et sites marchands</li></ul>" }]},
+      { date: 2016, job: [{ title: "Développeur Web (CDI) - Web Interactive",  description: "Développement de sites web sur mesure.<ul><li>Développment de sites web sur mesure avec le framework PHP Laravel principalement pour des sites de gestion de contenu et sites marchands</li></ul>" }]},
 			{ date: 2017, job: [
-        { title: "Developpeur Web (CDI) - Agence Web Interactive", description: "Réalisation de site web sur mesure avec le framework PHP Laravel" },
-        { title: "Developpeur Web (CDI) - NCI", description: "Développement d'interfaces web dans le domaine de la logistique" }
+        { title: "Développeur Web (CDI) - Web Interactive", description: "Développement de sites web sur mesure.<ul><li>Développment de sites web sur mesure avec le framework PHP Laravel principalement pour des sites de gestion de contenu et sites marchands</li></ul>" },
+        { title: "Développeur Web (CDI) - NCI", description:
+          "Développement d'interfaces web dans le domaine de la logistique.<ul><li>Développement de fonctionnalités sur l'ERP de l'entreprise en PHP</li><li>Développement d'une application web de statistiques sur les transports en VueJS</li><li>Développement d'une API de gestion d'envoie de sms avec le micro-framework PHP Lumen</li><li>Développement d'une application web de logistique avec VueJS (API Rest avec Datasnap)</li><li>Réalisation de formations web en interne pour faciliter la transition de l'entreprise d'une solution client lourd en Delphi vers une solution web intégrale</li></ul>"
+        }
         ]
       },
 			{ date: 2018, job: [
-        { title: "Developpeur Web (CDI) - NCI", description: "Développement d'interfaces web dans le domaine de la logistique" },
-        { title: "Fev 2018 -  Developpeur Web (CDD) - CICD", description: "Développement d'interfaces web dans le domaine de la comptabilité" }
+        { title: "Développeur Web (CDI) - NCI", description:
+        "Développement d'interfaces web dans le domaine de la logistique.<ul><li>Développement de fonctionnalités sur l'ERP de l'entreprise en PHP</li><li>Développement d'une application web de statistiques sur les transports en VueJS</li><li>Développement d'une API de gestion d'envoie de sms avec le micro-framework PHP Lumen</li><li>Développement d'une application web de logistique avec VueJS (API Rest avec Datasnap)</li><li>Réalisation de formations web en interne pour faciliter la transition de l'entreprise d'une solution client lourd en Delphi vers une solution web intégrale</li></ul>"
+        },
+        { title: "Développeur Web (CDD) - CICD", description: "Développement d'interfaces web dans le domaine de la comptabilité.<ul><li>Développement d'une application web de comptabilité avec une stack complète en JavaScript: API avec ExpressJS, interface client avec VueJS et base de données avec DynamoDB. Intégration continue avec Gitflow, Docker, GitlabCI et AWS.</li></ul>" }
       ] },
 		],
   }),
