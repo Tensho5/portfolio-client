@@ -122,10 +122,48 @@
     </section>
     <section id="contact">
       <v-container class="section-common-space">
+        <h3 class="section-title">{{ $t('contact.title') }}</h3>
         <v-layout row wrap>
-          <v-flex md6 sm12>
-            <h3 class="section-title">{{ $t('contact.title') }}</h3>
-            <p>{{ $t('contact.introduction') }}</p>
+          <v-flex md6 xs12 class="pr-5">
+            <v-card>
+              <v-list two-line>
+                <v-list-tile>
+                  <v-list-tile-action>
+                    <span class="ci-icons">
+                      <v-icon>phone</v-icon>
+                    </span>
+                  </v-list-tile-action>
+                  <v-list-tile-content>
+                    <v-list-tile-title>Phone</v-list-tile-title>
+                    <v-list-tile-sub-title>+ 33 6 31 37 53 13</v-list-tile-sub-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+                <v-divider inset></v-divider>
+                <v-list-tile>
+                  <v-list-tile-action>
+                    <span class="ci-icons">
+                      <v-icon>mail</v-icon>
+                    </span>
+                  </v-list-tile-action>
+                  <v-list-tile-content>
+                    <v-list-tile-title>Email</v-list-tile-title>
+                    <v-list-tile-sub-title>Leclercmaxime14@gmail.com</v-list-tile-sub-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+                <v-divider inset></v-divider>
+                <v-list-tile>
+                  <v-list-tile-action>
+                    <span class="ci-icons">
+                      <v-icon>location_on</v-icon>
+                    </span>
+                  </v-list-tile-action>
+                  <v-list-tile-content>
+                    <v-list-tile-title>Website</v-list-tile-title>
+                    <v-list-tile-sub-title>https://www.maxime-leclerc.com</v-list-tile-sub-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+              </v-list>
+            </v-card>
           </v-flex>
           <v-flex md6 sm12>
             <v-form ref="form" v-model="validateForm" lazy-validation>
@@ -133,7 +171,7 @@
               <v-text-field v-model="contact.email" :rules="emailRules" label="E-mail" required></v-text-field>
               <v-text-field v-model="contact.text" label="Content" required></v-text-field>
               <v-btn :disabled="!validateForm" @click="sendContactForm">Send</v-btn>
-              <v-btn @click="clearContactForm">Clear</v-btn>
+              <v-btn @click="clearContactForm">Cancel</v-btn>
             </v-form>
           </v-flex>
          </v-layout>
