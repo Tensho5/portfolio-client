@@ -1,13 +1,13 @@
 <template>
   <v-app>
-    <v-toolbar v-bind:class="[ stickyToolbar ? 'sticky-toolbar' : '']" app>
-      <v-toolbar-title>
-
+    <v-toolbar :height="toolbarHeight" v-bind:class="[ stickyToolbar ? 'sticky-toolbar' : '']" app>
+      <v-toolbar-title class="brand">
+        Maxime Leclerc
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <template v-if="false">
+      <template v-if="$vuetify.breakpoint.smAndDown">
         <v-toolbar-items>
-          <v-icon class="toggle-menu" @click="drawer = !drawer">menu</v-icon>
+          <v-icon class="toggle-menu" @click="toggleSidenav()">menu</v-icon>
         </v-toolbar-items>
       </template>
       <template v-else>
@@ -17,9 +17,10 @@
               <ul>
                 <li><a v-ripple href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
                 <li><a v-ripple href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
+                <li><a v-ripple href="#education" class="scrollactive-item">{{ $t('links.education') }}</a></li>
                 <li><a v-ripple href="#skills" class="scrollactive-item">{{ $t('links.skills') }}</a></li>
-                <li><a v-ripple href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>
-                <li><a v-ripple href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>
+            <!--<li><a v-ripple href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>-->
+            <!--<li><a v-ripple href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>-->
                 <li><a v-ripple href="#contact" class="scrollactive-item">{{ $t('links.contact') }}</a></li>
               </ul>
             </scrollactive>
@@ -56,18 +57,17 @@
       </template>
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" fixed right app>
-      <nav class="nav-menu">
-        <scrollactive>
-          <ul>
-            <li><a href="#home" class="scrollactive-item">{{ $t('links.home') }}</a></li>
-            <li><a href="#about" class="scrollactive-item">{{ $t('links.about') }}</a></li>
-            <li><a href="#skills" class="scrollactive-item">{{ $t('links.skills') }}</a></li>
-            <li><a href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>
-            <li><a href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>
-            <li><a href="#contact" class="scrollactive-item">{{ $t('links.contact') }}</a></li>
-          </ul>
-        </scrollactive>
-      </nav>
+      <scrollactive>
+        <ul>
+          <li><a v-ripple href="#home" class="scrollactive-item"><v-icon>home</v-icon> {{ $t('links.home') }}</a></li>
+          <li><a v-ripple href="#about" class="scrollactive-item"><v-icon>person</v-icon> {{ $t('links.about') }}</a></li>
+          <li><a v-ripple href="#education" class="scrollactive-item"><v-icon>school</v-icon> {{ $t('links.education') }}</a></li>
+          <li><a v-ripple href="#skills" class="scrollactive-item"><v-icon>show_chart</v-icon>{{ $t('links.skills') }}</a></li>
+          <!--<li><a v-ripple href="#portfolio" class="scrollactive-item">{{ $t('links.portfolio') }}</a></li>-->
+          <!--<li><a v-ripple href="#blog" class="scrollactive-item">{{ $t('links.blog') }}</a></li>-->
+          <li><a v-ripple href="#contact" class="scrollactive-item"><v-icon>mail</v-icon>{{ $t('links.contact') }}</a></li>
+        </ul>
+      </scrollactive>
     </v-navigation-drawer>
     <v-content class="pa-0">
       <nuxt/>
@@ -101,6 +101,7 @@
   export default {
     name: "Layout",
     data: () => ({
+      toolbarHeight: "64px",
       fab: false,
       currentYear: null,
       stickyToolbar: false,
@@ -117,6 +118,9 @@
         const top = window.pageYOffset || document.documentElement.offsetTop || 0
         this.stickyToolbar = top > 50
         this.fab = top > 300
+      },
+      toggleSidenav() {
+        this.drawer = !this.drawer
       },
       setLanguage(lang) {
         this.$i18n.locale = lang
