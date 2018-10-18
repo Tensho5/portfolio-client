@@ -1,27 +1,36 @@
-# Portfolio - Front made with Nuxt
+# client
 
-> Maxime Leclerc - Full stack web developer
-
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm install # Or yarn install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
+## Project setup
+```
+yarn install
 ```
 
-## License
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
 
-- The web application falls under the [MIT License](https://choosealicense.com/licenses/mit/)
-- The content and design are under [exclusive copyright](https://choosealicense.com/no-license/)
+### Compiles and minifies for production
+```
+yarn run build
+```
 
-Feel free to contact me for any questions at leclercmaxime14@gmail.com
+### Run your tests
+```
+yarn run test
+```
+
+### Lints and fixes files
+```
+yarn run lint
+```
+
+### Run your end-to-end tests
+```
+yarn run test:e2e
+```
+
+### Run your unit tests
+```
+yarn run test:unit
+```
