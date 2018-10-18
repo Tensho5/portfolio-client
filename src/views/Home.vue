@@ -184,33 +184,33 @@
 export default {
   data: () => ({
     slides: [
-      { src: "/img/banner.jpg", text: ["home.title", "home.introduction"] },
-      { src: "/img/device.jpg", text: [] },
-      { src: "/img/banner.jpg", text: ["home.welcome"] }
+      { src: "/images/banner.jpg", text: ["home.title", "home.introduction"] },
+      { src: "/images/device.jpg", text: [] },
+      { src: "/images/banner.jpg", text: ["home.welcome"] }
     ],
     languages: [
       { header: "skills.languages.title" },
-      { avatar: "/img/php.jpg", title: "PHP5/7", progress: 80 },
+      { avatar: "/images/php.jpg", title: "PHP5/7", progress: 80 },
       { divider: true, inset: true },
-      { avatar: "/img/javascript.png", title: "JS(ES6)/TS", progress: 80 },
+      { avatar: "/images/javascript.png", title: "JS(ES6)/TS", progress: 80 },
       { divider: true, inset: true },
-      { avatar: "/img/mysql.png", title: "MySQL", progress: 70 },
+      { avatar: "/images/mysql.png", title: "MySQL", progress: 70 },
       { divider: true, inset: true },
-      { avatar: "/img/html5.png", title: "HTML5/CSS3", progress: 70 },
+      { avatar: "/images/html5.png", title: "HTML5/CSS3", progress: 70 },
       { divider: true, inset: true },
-      { avatar: "/img/graphql.png", title: "GraphQL", progress: 30 }
+      { avatar: "/images/graphql.png", title: "GraphQL", progress: 30 }
     ],
     frameworks: [
       { header: "skills.frameworks.title" },
-      { avatar: "/img/laravel.png", title: "Laravel 5", progress: 80 },
+      { avatar: "/images/laravel.png", title: "Laravel 5", progress: 80 },
       { divider: true, inset: true },
-      { avatar: "/img/vue.png", title: "VueJS", progress: 80 },
+      { avatar: "/images/vue.png", title: "VueJS", progress: 80 },
       { divider: true, inset: true },
-      { avatar: "/img/expressjs.png", title: "ExpressJS", progress: 70 },
+      { avatar: "/images/expressjs.png", title: "ExpressJS", progress: 70 },
       { divider: true, inset: true },
-      { avatar: "/img/angular.png", title: "Angular 4+", progress: 40 },
+      { avatar: "/images/angular.png", title: "Angular 4+", progress: 40 },
       { divider: true, inset: true },
-      { avatar: "/img/symfony.png", title: "Symfony 3", progress: 30 }
+      { avatar: "/images/symfony.png", title: "Symfony 3", progress: 30 }
     ],
     otherSkills: [
       { header: "skills.others.title" },
